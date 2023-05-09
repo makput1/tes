@@ -29,7 +29,7 @@ const startBot = () => {
       console.log("koneksi open");
     }
   });
-  sock.ev.on("presence.update", (json) => console.log(json));
+
   sock.ev.on("messages.upsert", async (chatUpdate) => {
     var msg = chatUpdate.messages[0];
     var chat = msg.message.conversation;
