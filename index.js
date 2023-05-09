@@ -26,7 +26,7 @@ const startBot = () => {
         startBot();
       }
     } else if (connection === "open") {
-      console.log("koneksi open");
+      console.log("koneksi terbuka");
     }
   });
 
