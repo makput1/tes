@@ -1,0 +1,21 @@
+{
+  "name": "tes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/makput1/tes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/makput1/tes/issues"
+  },
+  "homepage": "https://github.com/makput1/tes#readme"
+}
