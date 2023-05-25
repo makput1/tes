@@ -1,6 +1,6 @@
 const {
   default: makeWASocket,
-  useSingleFileAuthState,
+  useMultiFileAuthState,
   makeInMemoryStore,
   DisconnectReason,
 } = require("@adiwajshing/baileys");
@@ -13,7 +13,8 @@ const startBot = async () => {
   const store = makeInMemoryStore({
     logger: pino().child({ level: "silent", stream: "store" }),
   });
-  const { state, saveCreds } = await useSingleFileAuthState(session);
+
+  const { state, saveCreds } = await useMultiFileAuthState(session);
 
   const bot = makeWASocket({
     logger: pino({ level: "silent" }),
@@ -21,7 +22,9 @@ const startBot = async () => {
     browser: ["Putra Multi Device", "Safari", "1.0.0"],
     auth: state,
   });
+
   bot.ev.on("creds.update", saveCreds);
+
   bot.ev.on("connection.update", async (update) => {
     const { connection, lastDisconnect } = update;
     if (connection === "close") {
