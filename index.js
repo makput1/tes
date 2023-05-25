@@ -7,7 +7,7 @@ const {
 const pino = require("pino");
 const { Boom, boomify } = require("@hapi/boom");
 
-let session = "session.json";
+let session = "./session.json";
 
 const startBot = async () => {
   const store = makeInMemoryStore({
